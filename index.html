@@ -221,7 +221,7 @@ h2 { margin: 0; font: 700 22px/1.2 var(--font-display); letter-spacing: -0.015em
   </section>
 
   <footer class="foot">
-    <p>Les images sont créées par Gemini (Google) puis gardées dans une banque partagée : chaque mot n'est dessiné qu'une fois, ensuite il est gratuit pour tout le monde.</p>
+    <p>Les images sont dessinées par une IA (FLUX) puis gardées dans une banque partagée : chaque mot n'est dessiné qu'une fois, ensuite il est gratuit pour tout le monde.</p>
     <p>Touchez une image pour l'agrandir, et le rond pour l'ajouter à la sélection. La sélection sert à imprimer un imagier, un memory ou un loto.</p>
   </footer>
 </main>
@@ -333,7 +333,7 @@ h2 { margin: 0; font: 700 22px/1.2 var(--font-display); letter-spacing: -0.015em
     S.busy = true; $('makeBtn').disabled = true;
     $('result').hidden = false; $('frame').innerHTML = '<div class="spin" aria-label="Création en cours"></div>';
     $('rWord').textContent = show(word); toggleActs(false);
-    setMsg(again ? 'Nouvelle version en cours…' : 'Gemini dessine « ' + show(word) + ' »… (10 à 20 secondes)');
+    setMsg(again ? 'Nouvelle version en cours…' : 'Dessin de « ' + show(word) + ' » en cours… (5 à 15 secondes)');
     try {
       const r = await fetch(FN, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: PK }, body: JSON.stringify({ word, again: !!again, cat: catOf[key] || null, code: store.get('code', '') }) });
       const d = await r.json();
